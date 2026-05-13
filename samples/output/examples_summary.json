@@ -1,0 +1,52 @@
+[
+  {
+    "id": "example_01",
+    "name": "董事会报告与经营数据解析",
+    "output_dir": "samples/output/board_report_postprocessed_p1_10",
+    "quality_score": 1.0,
+    "heading_count": 32,
+    "table_count": 13,
+    "numeric_mention_count": 34,
+    "char_count": 13191
+  },
+  {
+    "id": "example_02",
+    "name": "PDF 软件公司半年报财务章节解析",
+    "output_dir": "samples/output/example_02_pdf_software_h1_p30_40",
+    "quality_score": 1.0,
+    "heading_count": 37,
+    "table_count": 6,
+    "numeric_mention_count": 18,
+    "char_count": 13154
+  },
+  {
+    "id": "example_03",
+    "name": "七匹狼年报首页与审计信息解析",
+    "output_dir": "samples/output/example_03_septwolves_annual_p1_20",
+    "quality_score": 1.0,
+    "heading_count": 60,
+    "table_count": 26,
+    "numeric_mention_count": 61,
+    "char_count": 33738
+  },
+  {
+    "id": "example_04",
+    "name": "神州信息半年报公司信息与指标表解析",
+    "output_dir": "samples/output/example_04_dcits_h1_p1_20",
+    "quality_score": 1.0,
+    "heading_count": 42,
+    "table_count": 13,
+    "numeric_mention_count": 29,
+    "char_count": 24080
+  },
+  {
+    "id": "example_05",
+    "name": "蓝思科技半年报主营业务与调研表解析",
+    "output_dir": "samples/output/example_05_lens_h1_p1_20",
+    "quality_score": 1.0,
+    "heading_count": 57,
+    "table_count": 18,
+    "numeric_mention_count": 27,
+    "char_count": 26973
+  }
+]

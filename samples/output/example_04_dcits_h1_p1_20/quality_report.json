@@ -1,0 +1,26 @@
+{
+  "score": 1.0,
+  "checks": [
+    {
+      "name": "non_empty_markdown",
+      "passed": true,
+      "detail": "Markdown content should be available for downstream processing."
+    },
+    {
+      "name": "heading_structure",
+      "passed": true,
+      "detail": "Detected 42 headings."
+    },
+    {
+      "name": "table_signals",
+      "passed": true,
+      "detail": "Detected 13 table-like blocks."
+    },
+    {
+      "name": "financial_numeric_signals",
+      "passed": true,
+      "detail": "Detected 29 lines with financial numeric signals."
+    }
+  ],
+  "review_suggestions": []
+}

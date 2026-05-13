@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+MINERU_TOKEN*
+release/
+samples/output/mock/
+samples/output/api_mock/
+samples/output/board_report_precision_p1_10/
