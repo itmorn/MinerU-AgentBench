@@ -7,6 +7,8 @@
     "heading_count": 32,
     "table_count": 13,
     "numeric_mention_count": 34,
+    "financial_metric_count": 38,
+    "consistency_check_count": 30,
     "char_count": 13191
   },
   {
@@ -17,6 +19,8 @@
     "heading_count": 37,
     "table_count": 6,
     "numeric_mention_count": 18,
+    "financial_metric_count": 15,
+    "consistency_check_count": 12,
     "char_count": 13154
   },
   {
@@ -27,6 +31,8 @@
     "heading_count": 60,
     "table_count": 26,
     "numeric_mention_count": 61,
+    "financial_metric_count": 73,
+    "consistency_check_count": 63,
     "char_count": 33738
   },
   {
@@ -37,6 +43,8 @@
     "heading_count": 42,
     "table_count": 13,
     "numeric_mention_count": 29,
+    "financial_metric_count": 32,
+    "consistency_check_count": 21,
     "char_count": 24080
   },
   {
@@ -47,6 +55,8 @@
     "heading_count": 57,
     "table_count": 18,
     "numeric_mention_count": 27,
+    "financial_metric_count": 36,
+    "consistency_check_count": 32,
     "char_count": 26973
   }
 ]

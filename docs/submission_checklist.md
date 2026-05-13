@@ -19,6 +19,7 @@
 ├── app.py
 ├── agent/
 ├── scripts/
+├── tests/
 ├── docs/
 │   ├── deployment.md
 │   ├── technical_report.md
@@ -31,7 +32,8 @@
 ## 提交前检查
 
 - 确认仓库中没有 MinerU Token、手机号、账号 Cookie 或 `.env`
-- 确认 `python -m compileall app.py agent run_agent.py scripts` 通过
+- 确认 `python -m unittest discover -s tests` 通过
+- 确认 `python -m compileall app.py agent run_agent.py scripts tests` 通过
 - 确认 5 个样例输出目录均包含：
   - `full.md`
   - `structured.json`

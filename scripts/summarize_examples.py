@@ -52,6 +52,8 @@ def main() -> None:
                 "heading_count": stats["heading_count"],
                 "table_count": stats["table_count"],
                 "numeric_mention_count": stats["numeric_mention_count"],
+                "financial_metric_count": stats.get("financial_metric_count", 0),
+                "consistency_check_count": len(structured.get("consistency_checks", [])),
                 "char_count": stats["char_count"],
             }
         )
@@ -65,13 +67,13 @@ def main() -> None:
     lines = [
         "# 典型任务执行示例汇总",
         "",
-        "| ID | 任务 | 质量分 | 标题数 | 表格数 | 财务数字线索 | 输出目录 |",
-        "| --- | --- | ---: | ---: | ---: | ---: | --- |",
+        "| ID | 任务 | 质量分 | 标题数 | 表格数 | 财务数字线索 | 财务指标 | 一致性检查 | 输出目录 |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for row in rows:
         lines.append(
             "| {id} | {name} | {quality_score} | {heading_count} | {table_count} | "
-            "{numeric_mention_count} | `{output_dir}` |".format(**row)
+            "{numeric_mention_count} | {financial_metric_count} | {consistency_check_count} | `{output_dir}` |".format(**row)
         )
     md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(md_path)
@@ -80,4 +82,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

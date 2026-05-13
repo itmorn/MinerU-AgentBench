@@ -20,6 +20,21 @@
       "name": "financial_numeric_signals",
       "passed": true,
       "detail": "Detected 18 lines with financial numeric signals."
+    },
+    {
+      "name": "structured_table_records",
+      "passed": true,
+      "detail": "Structured records extracted from 6 tables."
+    },
+    {
+      "name": "financial_metric_extraction",
+      "passed": true,
+      "detail": "Detected 15 financial metrics."
+    },
+    {
+      "name": "metric_consistency_checks",
+      "passed": true,
+      "detail": "Generated 12 metric-level checks."
     }
   ],
   "review_suggestions": []

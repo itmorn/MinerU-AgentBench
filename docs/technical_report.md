@@ -69,10 +69,12 @@
 当前版本实现了以下数据处理能力：
 
 - 标题层级提取：识别 Markdown 中的 `#` 标题，输出章节层级和所在行号
-- 表格线索识别：支持 Markdown 表格和 MinerU 输出的 HTML `<table>` 表格
+- 表格行列结构化：支持 Markdown 表格和 MinerU 输出的 HTML `<table>` 表格，输出 `headers` 与 `records`
 - 财务数字识别：识别金额、百分比、带千分位的数字和常见单位
+- 财务指标抽取：从表格和正文中抽取营业收入、营业成本、净利润、费用、现金流等指标
+- 指标级一致性检查：针对可解析数值生成负值、零值和异常大数检查结果
 - 文档统计：输出字符数、行数、标题数、表格数和数字线索数
-- 质量检查：检查内容是否为空、标题结构是否足够、是否存在表格和财务数字线索
+- 质量检查：检查内容是否为空、标题结构是否足够、是否存在表格、结构化记录、财务指标和一致性检查
 - 结构化输出：统一生成 `structured.json`，便于下游入库、检索和 RAG 流程使用
 
 质量报告示例字段：
@@ -84,7 +86,10 @@
     {"name": "non_empty_markdown", "passed": true},
     {"name": "heading_structure", "passed": true},
     {"name": "table_signals", "passed": true},
-    {"name": "financial_numeric_signals", "passed": true}
+    {"name": "financial_numeric_signals", "passed": true},
+    {"name": "structured_table_records", "passed": true},
+    {"name": "financial_metric_extraction", "passed": true},
+    {"name": "metric_consistency_checks", "passed": true}
   ]
 }
 ```
@@ -93,13 +98,13 @@
 
 项目已完成 5 个真实 MinerU 精准 API 解析样例，输出均包含 `full.md`、`structured.json`、`quality_report.json` 和 `run.log.jsonl`。
 
-| ID | 任务 | 页段 | 质量分 | 标题数 | 表格数 | 财务数字线索 | 输出目录 |
-| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
-| example_01 | 董事会报告与经营数据解析 | 1-10 | 1.0 | 32 | 13 | 34 | `samples/output/board_report_postprocessed_p1_10` |
-| example_02 | PDF 软件公司半年报财务章节解析 | 30-40 | 1.0 | 37 | 6 | 18 | `samples/output/example_02_pdf_software_h1_p30_40` |
-| example_03 | 七匹狼年报首页与审计信息解析 | 1-20 | 1.0 | 60 | 26 | 61 | `samples/output/example_03_septwolves_annual_p1_20` |
-| example_04 | 神州信息半年报公司信息与指标表解析 | 1-20 | 1.0 | 42 | 13 | 29 | `samples/output/example_04_dcits_h1_p1_20` |
-| example_05 | 蓝思科技半年报主营业务与调研表解析 | 1-20 | 1.0 | 57 | 18 | 27 | `samples/output/example_05_lens_h1_p1_20` |
+| ID | 任务 | 页段 | 质量分 | 标题数 | 表格数 | 财务数字线索 | 财务指标 | 一致性检查 | 输出目录 |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| example_01 | 董事会报告与经营数据解析 | 1-10 | 1.0 | 32 | 13 | 34 | 38 | 30 | `samples/output/board_report_postprocessed_p1_10` |
+| example_02 | PDF 软件公司半年报财务章节解析 | 30-40 | 1.0 | 37 | 6 | 18 | 15 | 12 | `samples/output/example_02_pdf_software_h1_p30_40` |
+| example_03 | 七匹狼年报首页与审计信息解析 | 1-20 | 1.0 | 60 | 26 | 61 | 73 | 63 | `samples/output/example_03_septwolves_annual_p1_20` |
+| example_04 | 神州信息半年报公司信息与指标表解析 | 1-20 | 1.0 | 42 | 13 | 29 | 32 | 21 | `samples/output/example_04_dcits_h1_p1_20` |
+| example_05 | 蓝思科技半年报主营业务与调研表解析 | 1-20 | 1.0 | 57 | 18 | 27 | 36 | 32 | `samples/output/example_05_lens_h1_p1_20` |
 
 从结果看，Agent 能够在不同上市公司公告和财报材料中稳定识别章节、表格和财务数字线索。5 个样例均通过完整性检查，说明当前流程可以作为财务文档语料生产的初步自动化链路。
 
@@ -114,6 +119,7 @@
 - `docs/deployment.md`：部署与运行说明
 - `scripts/run_precision_examples.sh`：典型样例批处理脚本
 - `scripts/summarize_examples.py`：样例结果汇总脚本
+- `tests/test_postprocess.py`：表格结构化和财务指标抽取测试
 
 每次运行均生成独立输出目录，包含：
 

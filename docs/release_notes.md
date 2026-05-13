@@ -13,8 +13,11 @@
 - 本地 Markdown 后处理
 - FastAPI 服务入口
 - 标题、表格、财务数字线索抽取
+- 表格行列级结构化输出
+- 财务指标抽取和指标级一致性检查
 - 质量检查报告
 - JSONL 运行日志
+- 单元测试
 - 5 个真实公开 PDF 解析样例
 
 ## 建议 GitHub 内容
@@ -27,6 +30,7 @@
 - `app.py`
 - `agent/`
 - `scripts/`
+- `tests/`
 - `docs/`
 - `samples/mock/`
 - `samples/output/examples_summary.md`
@@ -72,4 +76,3 @@ API 模式：
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
-

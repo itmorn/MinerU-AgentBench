@@ -7,7 +7,8 @@
 - 支持 MinerU Agent 轻量 API、精准 API、本地 CLI 三种解析方式
 - 自动生成任务计划和运行日志
 - 将解析结果整理为统一的 `structured.json`
-- 提取标题、表格线索、财务数字和质量检查结果
+- 提取标题、表格 records、财务指标、财务数字和质量检查结果
+- 生成指标级一致性检查
 - 输出 Markdown、JSON、日志，便于复现和评审
 
 ## 快速开始
@@ -82,6 +83,12 @@ curl -X POST "http://127.0.0.1:8000/parse" \
 - `structured.json`：统一结构化结果
 - `quality_report.json`：质量检查报告
 - `run.log.jsonl`：任务计划、工具调用、检查步骤和最终结果日志
+
+运行测试：
+
+```bash
+python -m unittest discover -s tests
+```
 
 ## 典型样例
 
