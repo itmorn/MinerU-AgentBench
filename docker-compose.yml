@@ -1,0 +1,10 @@
+services:
+  mineru-data-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      MINERU_TOKEN: ${MINERU_TOKEN:-}
+    volumes:
+      - ./samples:/app/samples
+      - ./docs:/app/docs

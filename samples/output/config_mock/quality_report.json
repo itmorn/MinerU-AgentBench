@@ -1,0 +1,48 @@
+{
+  "score": 1.0,
+  "checks": [
+    {
+      "name": "non_empty_markdown",
+      "passed": true,
+      "detail": "Markdown content should be available for downstream processing."
+    },
+    {
+      "name": "heading_structure",
+      "passed": true,
+      "detail": "Detected 4 headings."
+    },
+    {
+      "name": "table_signals",
+      "passed": true,
+      "detail": "Detected 1 table-like blocks."
+    },
+    {
+      "name": "financial_numeric_signals",
+      "passed": true,
+      "detail": "Detected 5 lines with financial numeric signals."
+    },
+    {
+      "name": "structured_table_records",
+      "passed": true,
+      "detail": "Structured records extracted from 1 tables."
+    },
+    {
+      "name": "financial_metric_extraction",
+      "passed": true,
+      "detail": "Detected 8 financial metrics."
+    },
+    {
+      "name": "metric_consistency_checks",
+      "passed": true,
+      "detail": "Generated 4 metric-level checks."
+    },
+    {
+      "name": "schema_valid",
+      "passed": true,
+      "detail": "Schema issues: 0."
+    }
+  ],
+  "schema_issues": [],
+  "warnings": [],
+  "review_suggestions": []
+}

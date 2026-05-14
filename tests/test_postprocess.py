@@ -22,8 +22,46 @@ class MarkdownPostProcessorTest(unittest.TestCase):
         self.assertGreaterEqual(result.structured["document_stats"]["financial_metric_count"], 2)
         self.assertGreaterEqual(len(result.structured["consistency_checks"]), 2)
         self.assertTrue(any(check["name"] == "structured_table_records" for check in result.quality["checks"]))
+        self.assertEqual(result.structured["document_meta"]["document_type"], "financial_report")
+        self.assertIn("sections", result.structured)
+
+    def test_unit_normalization_growth_check_and_schema(self) -> None:
+        markdown = """# 一、主要会计数据
+
+单位：万元
+| 项目 | 本期金额 | 上年同期金额 | 同比变动 |
+| --- | ---: | ---: | ---: |
+| 营业收入 | 20,954.28 | 18,056.40 | 16.05% |
+"""
+        result = MarkdownPostProcessor().process(markdown, source_name="annual_report.md")
+        metric = result.structured["financial_metrics"][0]
+        current = metric["normalized_values"]["本期金额"]
+        growth = result.structured["consistency_checks"][0]["growth_check"]
+
+        self.assertEqual(current["unit"], "元")
+        self.assertAlmostEqual(current["normalized_value"], 209542800.0)
+        self.assertEqual(growth["status"], "pass")
+        self.assertTrue(any(check["name"] == "schema_valid" and check["passed"] for check in result.quality["checks"]))
+
+    def test_cross_page_like_table_merge(self) -> None:
+        markdown = """# 一、财务报表附注
+
+单位：元
+| 项目 | 本期金额 | 上期金额 |
+| --- | ---: | ---: |
+| 营业收入 | 100 | 80 |
+
+续表
+| 项目 | 本期金额 | 上期金额 |
+| --- | ---: | ---: |
+| 营业成本 | 70 | 60 |
+"""
+        result = MarkdownPostProcessor().process(markdown, source_name="annual_report.md")
+        merged = result.structured["merged_tables"][0]
+
+        self.assertEqual(merged["source_tables"], ["table_001", "table_002"])
+        self.assertEqual(len(merged["records"]), 2)
 
 
 if __name__ == "__main__":
     unittest.main()
-

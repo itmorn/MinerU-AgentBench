@@ -48,6 +48,15 @@ python run_agent.py \
   --output-dir samples/output/board_report
 ```
 
+使用 MinerU JSON/content_list：
+
+```bash
+python run_agent.py \
+  --mode mineru-json \
+  --mineru-json samples/mock/mineru_content_list.json \
+  --output-dir samples/output/json_mock
+```
+
 如果只是验证 Agent 后处理流程，可以先用已有 Markdown：
 
 ```bash
@@ -55,6 +64,12 @@ python run_agent.py \
   --mineru-markdown path/to/full.md \
   --mode markdown \
   --output-dir samples/output/demo
+```
+
+使用配置文件批处理：
+
+```bash
+python run_agent.py --config samples/config_batch.json
 ```
 
 启动 API 服务：
@@ -75,19 +90,46 @@ curl -X POST "http://127.0.0.1:8000/parse" \
   }'
 ```
 
+批处理 API：
+
+```bash
+curl -X POST "http://127.0.0.1:8000/batch_parse" \
+  -H "Content-Type: application/json" \
+  -d '{"tasks":[{"mode":"markdown","mineru_markdown":"samples/mock/mineru_full.md","output_dir":"samples/output/api_batch_mock"}]}'
+```
+
 ## 输出文件
 
 每次运行会在输出目录生成：
 
 - `full.md`：MinerU 解析后的 Markdown
 - `structured.json`：统一结构化结果
+- `tables.json`：结构化表格结果
+- `financial_metrics.json`：财务指标抽取结果
 - `quality_report.json`：质量检查报告
 - `run.log.jsonl`：任务计划、工具调用、检查步骤和最终结果日志
+
+`structured.json` 遵循 `schemas/structured.schema.json`，在 MinerU JSON 模式下还会包含 `layout_blocks`、`paragraphs`、`figures`、表格 `source_blocks` 和字段类型 `fields`。
 
 运行测试：
 
 ```bash
 python -m unittest discover -s tests
+```
+
+Gold 标注评测：
+
+```bash
+python scripts/evaluate.py \
+  --gold samples/gold/mock_gold.json \
+  --prediction samples/output/config_mock/structured.json
+```
+
+Docker 启动：
+
+```bash
+docker compose up --build
+curl http://127.0.0.1:8000/health
 ```
 
 ## 典型样例

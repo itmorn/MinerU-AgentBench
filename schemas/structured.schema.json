@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/mineru-data-agent/structured.schema.json",
+  "title": "MinerU Data Agent Structured Output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_meta",
+    "document_stats",
+    "layout_blocks",
+    "paragraphs",
+    "figures",
+    "sections",
+    "tables",
+    "merged_tables",
+    "financial_metrics",
+    "quality_report",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "document_id": {"type": "string"},
+    "document_meta": {"type": "object"},
+    "document_stats": {"type": "object"},
+    "layout_blocks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/layout_block"}
+    },
+    "paragraphs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/layout_block"}
+    },
+    "figures": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/layout_block"}
+    },
+    "sections": {"type": "array"},
+    "tables": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/table"}
+    },
+    "merged_tables": {"type": "array"},
+    "financial_metrics": {
+      "type": "array",
+      "items": {"type": "object", "required": ["metric", "source"]}
+    },
+    "quality_report": {"type": "object"},
+    "warnings": {"type": "array"}
+  },
+  "$defs": {
+    "layout_block": {
+      "type": "object",
+      "required": ["block_id", "type", "line_start", "line_end"],
+      "properties": {
+        "block_id": {"type": "string"},
+        "type": {"type": "string"},
+        "page": {"type": ["integer", "string", "null"]},
+        "bbox": {"type": ["array", "object", "null"]},
+        "line_start": {"type": "integer"},
+        "line_end": {"type": "integer"},
+        "confidence": {"type": ["number", "null"]},
+        "text": {"type": "string"}
+      }
+    },
+    "table": {
+      "type": "object",
+      "required": ["table_id", "headers", "fields", "records", "row_count", "column_count"],
+      "properties": {
+        "table_id": {"type": "string"},
+        "headers": {"type": "array", "items": {"type": "string"}},
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "normalized_name", "field_type"],
+            "properties": {
+              "name": {"type": "string"},
+              "normalized_name": {"type": "string"},
+              "field_type": {"type": "string"},
+              "unit": {"type": ["string", "null"]},
+              "confidence": {"type": "number"}
+            }
+          }
+        },
+        "records": {"type": "array", "items": {"type": "object"}},
+        "row_count": {"type": "integer"},
+        "column_count": {"type": "integer"},
+        "source_blocks": {"type": "array"}
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "section_structure_accuracy": 1.0,
+  "table_detection_precision": 1.0,
+  "table_record_valid_rate": 1.0,
+  "financial_metric_hit_rate": 1.0,
+  "numeric_parse_success_rate": 1.0,
+  "unit_normalization_accuracy": 1.0,
+  "consistency_check_pass_rate": 1.0,
+  "retry_success_rate": 1.0,
+  "schema_valid_rate": 1.0,
+  "schema_issues": [],
+  "counts": {
+    "gold_tables": 1,
+    "predicted_tables": 1,
+    "gold_metrics": 2,
+    "predicted_metrics": 4
+  }
+}

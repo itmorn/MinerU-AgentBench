@@ -1,0 +1,42 @@
+{
+  "document_meta": {
+    "source_name": "mineru_full.md",
+    "document_type": "financial_report",
+    "language": "zh"
+  },
+  "document_stats": {},
+  "sections": [
+    {
+      "title": "2023 年半年度报告",
+      "children": []
+    },
+    {
+      "title": "管理层讨论与分析",
+      "children": []
+    },
+    {
+      "title": "主营业务分析",
+      "children": []
+    }
+  ],
+  "tables": [
+    {
+      "table_id": "table_001",
+      "headers": ["项目", "本期金额", "上期金额", "同比变动"],
+      "records": []
+    }
+  ],
+  "merged_tables": [],
+  "financial_metrics": [
+    {
+      "source": "table_001",
+      "metric": "营业收入"
+    },
+    {
+      "source": "table_001",
+      "metric": "营业成本"
+    }
+  ],
+  "quality_report": {},
+  "warnings": []
+}

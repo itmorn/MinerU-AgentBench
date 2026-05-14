@@ -1,0 +1,14 @@
+{
+  "total": 1,
+  "completed": 1,
+  "failed": 0,
+  "tasks": [
+    {
+      "task_index": 1,
+      "status": "completed",
+      "structured_json": "samples/output/config_mock/structured.json",
+      "quality_report": "samples/output/config_mock/quality_report.json",
+      "run_log": "samples/output/config_mock/run.log.jsonl"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "mode": "markdown",
+      "mineru_markdown": "samples/mock/mineru_full.md",
+      "output_dir": "samples/output/config_mock",
+      "task_type": "financial_report_structuring",
+      "quality_threshold": 0.85,
+      "max_retry": 0
+    }
+  ]
+}

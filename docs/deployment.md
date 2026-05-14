@@ -49,6 +49,32 @@ python run_agent.py \
   --output-dir samples/output/board_report
 ```
 
+### 方式四：配置文件批处理
+
+```bash
+python run_agent.py --config samples/config_batch.json
+```
+
+配置文件支持单任务对象，也支持 `{"tasks": [...]}` 批任务数组。常用字段包括 `mode`、`input_url`、`input_file`、`mineru_markdown`、`output_dir`、`page_range`、`quality_threshold`、`max_retry`、`enable_ocr`。
+
+### 方式五：MinerU JSON 后处理
+
+```bash
+python run_agent.py \
+  --mode mineru-json \
+  --mineru-json samples/mock/mineru_content_list.json \
+  --output-dir samples/output/json_mock
+```
+
+该模式会将 MinerU JSON/content_list 转换为 Markdown 后处理，并保留 `layout_blocks`、`figures`、`paragraphs`、表格 `source_blocks`、字段类型和 bbox/page 追踪信息。
+
+### 方式六：Docker Compose
+
+```bash
+docker compose up --build
+curl http://127.0.0.1:8000/health
+```
+
 ## 日志查看
 
 ```bash
@@ -95,4 +121,29 @@ curl -X POST "http://127.0.0.1:8000/parse" \
     "page_range": "1-10",
     "output_dir": "samples/output/api_precision_demo"
   }'
+```
+
+批量解析：
+
+```bash
+curl -X POST "http://127.0.0.1:8000/batch_parse" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tasks": [
+      {
+        "mode": "markdown",
+        "mineru_markdown": "samples/mock/mineru_full.md",
+        "output_dir": "samples/output/api_batch_mock"
+      }
+    ]
+  }'
+```
+
+## Gold 评测
+
+```bash
+python scripts/evaluate.py \
+  --gold samples/gold/mock_gold.json \
+  --prediction samples/output/config_mock/structured.json \
+  --output samples/output/config_mock/evaluation_report.json
 ```

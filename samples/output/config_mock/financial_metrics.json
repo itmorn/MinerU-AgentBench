@@ -1,0 +1,314 @@
+[
+  {
+    "source": "merged_table_001",
+    "source_tables": [
+      "table_001"
+    ],
+    "section": "主营业务分析",
+    "metric": "营业收入",
+    "headers": [
+      "科目",
+      "本期数",
+      "上年同期数",
+      "变动比例"
+    ],
+    "values": {
+      "本期数": 286094014.59,
+      "上年同期数": 285087173.97,
+      "变动比例": 0.35
+    },
+    "normalized_values": {
+      "本期数": {
+        "raw_value": "286,094,014.59",
+        "raw_number": 286094014.59,
+        "raw_unit": "万元",
+        "normalized_value": 2860940145899.9995,
+        "unit": "元"
+      },
+      "上年同期数": {
+        "raw_value": "285,087,173.97",
+        "raw_number": 285087173.97,
+        "raw_unit": "万元",
+        "normalized_value": 2850871739700.0005,
+        "unit": "元"
+      },
+      "变动比例": {
+        "raw_value": "0.35%",
+        "raw_number": 0.35,
+        "raw_unit": "%",
+        "normalized_value": 0.0034999999999999996,
+        "unit": "ratio"
+      }
+    },
+    "unit_context": "万元"
+  },
+  {
+    "source": "merged_table_001",
+    "source_tables": [
+      "table_001"
+    ],
+    "section": "主营业务分析",
+    "metric": "营业成本",
+    "headers": [
+      "科目",
+      "本期数",
+      "上年同期数",
+      "变动比例"
+    ],
+    "values": {
+      "本期数": 15160870.21,
+      "上年同期数": 12482323.83,
+      "变动比例": 21.46
+    },
+    "normalized_values": {
+      "本期数": {
+        "raw_value": "15,160,870.21",
+        "raw_number": 15160870.21,
+        "raw_unit": "万元",
+        "normalized_value": 151608702100.0,
+        "unit": "元"
+      },
+      "上年同期数": {
+        "raw_value": "12,482,323.83",
+        "raw_number": 12482323.83,
+        "raw_unit": "万元",
+        "normalized_value": 124823238300.0,
+        "unit": "元"
+      },
+      "变动比例": {
+        "raw_value": "21.46%",
+        "raw_number": 21.46,
+        "raw_unit": "%",
+        "normalized_value": 0.2146,
+        "unit": "ratio"
+      }
+    },
+    "unit_context": "万元"
+  },
+  {
+    "source": "merged_table_001",
+    "source_tables": [
+      "table_001"
+    ],
+    "section": "主营业务分析",
+    "metric": "销售费用",
+    "headers": [
+      "科目",
+      "本期数",
+      "上年同期数",
+      "变动比例"
+    ],
+    "values": {
+      "本期数": 157744663.7,
+      "上年同期数": 133620691.69,
+      "变动比例": 18.05
+    },
+    "normalized_values": {
+      "本期数": {
+        "raw_value": "157,744,663.70",
+        "raw_number": 157744663.7,
+        "raw_unit": "万元",
+        "normalized_value": 1577446637000.0,
+        "unit": "元"
+      },
+      "上年同期数": {
+        "raw_value": "133,620,691.69",
+        "raw_number": 133620691.69,
+        "raw_unit": "万元",
+        "normalized_value": 1336206916900.0,
+        "unit": "元"
+      },
+      "变动比例": {
+        "raw_value": "18.05%",
+        "raw_number": 18.05,
+        "raw_unit": "%",
+        "normalized_value": 0.1805,
+        "unit": "ratio"
+      }
+    },
+    "unit_context": "万元"
+  },
+  {
+    "source": "merged_table_001",
+    "source_tables": [
+      "table_001"
+    ],
+    "section": "主营业务分析",
+    "metric": "研发费用",
+    "headers": [
+      "科目",
+      "本期数",
+      "上年同期数",
+      "变动比例"
+    ],
+    "values": {
+      "本期数": 117693076.6,
+      "上年同期数": 89347070.15,
+      "变动比例": 31.73
+    },
+    "normalized_values": {
+      "本期数": {
+        "raw_value": "117,693,076.60",
+        "raw_number": 117693076.6,
+        "raw_unit": "万元",
+        "normalized_value": 1176930766000.0,
+        "unit": "元"
+      },
+      "上年同期数": {
+        "raw_value": "89,347,070.15",
+        "raw_number": 89347070.15,
+        "raw_unit": "万元",
+        "normalized_value": 893470701500.0,
+        "unit": "元"
+      },
+      "变动比例": {
+        "raw_value": "31.73%",
+        "raw_number": 31.73,
+        "raw_unit": "%",
+        "normalized_value": 0.3173,
+        "unit": "ratio"
+      }
+    },
+    "unit_context": "万元"
+  },
+  {
+    "source": "line_11",
+    "metric": "营业收入",
+    "values": {
+      "raw_numbers": [
+        "286,094,014.59",
+        "285,087,173.97",
+        "0.35%"
+      ]
+    },
+    "normalized_values": [
+      {
+        "raw_value": "286,094,014.59",
+        "raw_number": 286094014.59,
+        "raw_unit": "%",
+        "normalized_value": 2860940.1459,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "285,087,173.97",
+        "raw_number": 285087173.97,
+        "raw_unit": "%",
+        "normalized_value": 2850871.7397000003,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "0.35%",
+        "raw_number": 0.35,
+        "raw_unit": "%",
+        "normalized_value": 0.0034999999999999996,
+        "unit": "ratio"
+      }
+    ],
+    "text": "| 营业收入 | 286,094,014.59 | 285,087,173.97 | 0.35% |"
+  },
+  {
+    "source": "line_12",
+    "metric": "营业成本",
+    "values": {
+      "raw_numbers": [
+        "15,160,870.21",
+        "12,482,323.83",
+        "21.46%"
+      ]
+    },
+    "normalized_values": [
+      {
+        "raw_value": "15,160,870.21",
+        "raw_number": 15160870.21,
+        "raw_unit": "%",
+        "normalized_value": 151608.7021,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "12,482,323.83",
+        "raw_number": 12482323.83,
+        "raw_unit": "%",
+        "normalized_value": 124823.2383,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "21.46%",
+        "raw_number": 21.46,
+        "raw_unit": "%",
+        "normalized_value": 0.2146,
+        "unit": "ratio"
+      }
+    ],
+    "text": "| 营业成本 | 15,160,870.21 | 12,482,323.83 | 21.46% |"
+  },
+  {
+    "source": "line_13",
+    "metric": "销售费用",
+    "values": {
+      "raw_numbers": [
+        "157,744,663.70",
+        "133,620,691.69",
+        "18.05%"
+      ]
+    },
+    "normalized_values": [
+      {
+        "raw_value": "157,744,663.70",
+        "raw_number": 157744663.7,
+        "raw_unit": "%",
+        "normalized_value": 1577446.6369999999,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "133,620,691.69",
+        "raw_number": 133620691.69,
+        "raw_unit": "%",
+        "normalized_value": 1336206.9169,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "18.05%",
+        "raw_number": 18.05,
+        "raw_unit": "%",
+        "normalized_value": 0.1805,
+        "unit": "ratio"
+      }
+    ],
+    "text": "| 销售费用 | 157,744,663.70 | 133,620,691.69 | 18.05% |"
+  },
+  {
+    "source": "line_14",
+    "metric": "研发费用",
+    "values": {
+      "raw_numbers": [
+        "117,693,076.60",
+        "89,347,070.15",
+        "31.73%"
+      ]
+    },
+    "normalized_values": [
+      {
+        "raw_value": "117,693,076.60",
+        "raw_number": 117693076.6,
+        "raw_unit": "%",
+        "normalized_value": 1176930.7659999998,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "89,347,070.15",
+        "raw_number": 89347070.15,
+        "raw_unit": "%",
+        "normalized_value": 893470.7015000001,
+        "unit": "ratio"
+      },
+      {
+        "raw_value": "31.73%",
+        "raw_number": 31.73,
+        "raw_unit": "%",
+        "normalized_value": 0.3173,
+        "unit": "ratio"
+      }
+    ],
+    "text": "| 研发费用 | 117,693,076.60 | 89,347,070.15 | 31.73% |"
+  }
+]

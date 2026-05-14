@@ -1,0 +1,85 @@
+[
+  {
+    "table_id": "table_001",
+    "logical_table_id": "table_001",
+    "section": "主营业务分析",
+    "section_level": 2,
+    "start_line": 9,
+    "end_line": 14,
+    "page_start": null,
+    "page_end": null,
+    "row_count": 5,
+    "column_count": 4,
+    "numeric_cell_count": 12,
+    "context_unit": "万元",
+    "headers": [
+      "科目",
+      "本期数",
+      "上年同期数",
+      "变动比例"
+    ],
+    "fields": [
+      {
+        "name": "科目",
+        "normalized_name": "metric",
+        "field_type": "metric",
+        "unit": null,
+        "confidence": 0.8
+      },
+      {
+        "name": "本期数",
+        "normalized_name": "current",
+        "field_type": "money",
+        "unit": "元",
+        "confidence": 0.8
+      },
+      {
+        "name": "上年同期数",
+        "normalized_name": "previous",
+        "field_type": "money",
+        "unit": "元",
+        "confidence": 0.8
+      },
+      {
+        "name": "变动比例",
+        "normalized_name": "growth_rate",
+        "field_type": "ratio",
+        "unit": "ratio",
+        "confidence": 0.8
+      }
+    ],
+    "records": [
+      {
+        "科目": "营业收入",
+        "本期数": "286,094,014.59",
+        "上年同期数": "285,087,173.97",
+        "变动比例": "0.35%"
+      },
+      {
+        "科目": "营业成本",
+        "本期数": "15,160,870.21",
+        "上年同期数": "12,482,323.83",
+        "变动比例": "21.46%"
+      },
+      {
+        "科目": "销售费用",
+        "本期数": "157,744,663.70",
+        "上年同期数": "133,620,691.69",
+        "变动比例": "18.05%"
+      },
+      {
+        "科目": "研发费用",
+        "本期数": "117,693,076.60",
+        "上年同期数": "89,347,070.15",
+        "变动比例": "31.73%"
+      }
+    ],
+    "preview": [
+      "| 科目 | 本期数 | 上年同期数 | 变动比例 |",
+      "| --- | ---: | ---: | ---: |",
+      "| 营业收入 | 286,094,014.59 | 285,087,173.97 | 0.35% |",
+      "| 营业成本 | 15,160,870.21 | 12,482,323.83 | 21.46% |",
+      "| 销售费用 | 157,744,663.70 | 133,620,691.69 | 18.05% |"
+    ]
+  }
+]
