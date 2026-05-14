@@ -140,9 +140,7 @@ curl http://127.0.0.1:8000/health
 - `docs/technical_report.md`
 - `docs/release_notes.md`
 
-## 推荐比赛包装
-
-项目定位：
+## 项目定位
 
 > 面向财报与研报的 MinerU 增强型 Data Agent，支持复杂 PDF 解析、跨页表格线索识别、财务数字一致性检查和结构化语料输出。
 
